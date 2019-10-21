@@ -1,0 +1,17 @@
+<p>todolist works!</p>
+
+TODO LIST:
+Do zrobienia: {{todos.length}}
+<ul>
+    <li *ngFor="let todo of todos" [class.completed]="todo.completed">
+        <span>{{todo.id}} </span> {{todo.name}} <input type="checkbox" [(ngModel)]="todo.completed"> <button (click)="deleteTodo(todo)">delete</button>
+    </li>
+</ul>
+
+<br>
+<br>
+<input type="text" [(ngModel)]="newTodoName"><button (click)="addTodo()">dodaj</button>
+todos left: {{ remainingTodos() }}
+<pre>
+    {{todos|json}}
+</pre>
